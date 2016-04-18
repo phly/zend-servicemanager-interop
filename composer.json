@@ -1,0 +1,49 @@
+{
+    "name": "phly/zend-servicemanager-interop",
+    "type": "library",
+    "description": "Providing service-provider compilation for zend-servicemanager",
+    "homepage": "https://github.com/phly/zend-servicemanager-interop",
+    "license": "BSD-2-CLAUSE",
+    "keywords": [
+        "di",
+        "psr",
+        "psr-11",
+        "service-provider"
+    ],
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    },
+    "require": {
+        "php": "^5.6 || ^7.0",
+        "container-interop/container-interop": "^1.1",
+        "container-interop/service-provider": "^0.2",
+        "zendframework/zend-servicemanager": "^3.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8",
+        "squizlabs/php_codesniffer": "^2.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "Zend\\ServiceManager\\Interop\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "ZendTest\\ServiceManager\\Interop\\": "test/"
+        }
+    },
+    "scripts": {
+        "check": [
+            "@cs",
+            "@test"
+        ],
+        "coveralls": "coveralls",
+        "cs": "phpcs",
+        "cs-fix": "phpcbf",
+        "test": "phpunit",
+        "test-coverage": "phpunit --coverage-clover clover.xml"
+    }
+}
