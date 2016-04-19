@@ -54,7 +54,7 @@ class ContainerInjector
     private function marshalServiceProvider(ServiceProvider $provider, ServiceManager $container)
     {
         foreach ($provider->getServices() as $service => $factory) {
-            $callable = is_callable($factory) ? $factory : $this->marshalCallable($provider, $factory, $service);
+            $callable = $this->marshalCallable($provider, $factory, $service);
 
             if ($container->has($service)) {
                 $container->addDelegator($service, $this->createDelegator($callable));
